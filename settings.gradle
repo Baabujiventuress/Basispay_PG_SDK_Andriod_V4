@@ -1,0 +1,3 @@
+include ':basispaypg'
+include ':app'
+rootProject.name = "BasisPay PGV2"
