@@ -3,10 +3,8 @@ package com.basispaysdk
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatTextView
 import com.basispaypg.BasisPayPGConstants
 import com.basispaypg.BasisPayPaymentInitializer
 import com.basispaypg.BasisPayPaymentParams
@@ -44,9 +42,11 @@ class MainActivity : AppCompatActivity() {
         pgPaymentParams.setDeliveryCountry("IND")
 
         val pgPaymentInitializer =
-            BasisPayPaymentInitializer(pgPaymentParams, this@MainActivity,
+            BasisPayPaymentInitializer(
+                pgPaymentParams, this@MainActivity,
                 "YOUR_RETURN_URL",
-                false) //TEST = false or LIVE = true
+                false
+            ) //TEST = false or LIVE = true
         pgPaymentInitializer.initiatePaymentProcess()
     }
 
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                         val referenceNo = response.getString("referenceNo")
                         val success = response.getBoolean("success")
 
-                        Toast.makeText(this,referenceNo,Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, referenceNo, Toast.LENGTH_SHORT).show()
 
                     }
                 } catch (e: JSONException) {
