@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         pgPaymentParams.setCity("City") //required field(*)
         pgPaymentParams.setRegion("Region") //required field(*)
         pgPaymentParams.setCountry("IND") //required field(*)
+        pgPaymentParams.setPaymentMode("XX")
+        pgPaymentParams.setPaymentMode("XX")
 
 
         //// optional parameters

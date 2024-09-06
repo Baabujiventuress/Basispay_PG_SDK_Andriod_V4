@@ -67,6 +67,14 @@ class BasisPayPaymentInitializer constructor(
                                                 } else {
                                                     params["country"] =
                                                         paymentParams.getCountry()
+                                                    if (paymentParams.getPaymentMode() != null) {
+                                                        params["paymentMode"] =
+                                                            paymentParams.getPaymentMode()
+                                                    }
+                                                    if (paymentParams.getPaymentMethod() != null) {
+                                                        params["paymentMethod"] =
+                                                            paymentParams.getPaymentMethod()
+                                                    }
                                                     if (paymentParams.getDeliveryAddress() != null) {
                                                         params["deliveryAddress"] =
                                                             paymentParams.getDeliveryAddress()
@@ -88,33 +96,11 @@ class BasisPayPaymentInitializer constructor(
                                                                             if (paymentParams.getDeliveryCountry() != null) {
                                                                                 params["deliveryCountry"] =
                                                                                     paymentParams.getDeliveryCountry()
-                                                                            } else {
-                                                                                throw java.lang.RuntimeException(
-                                                                                    "delivery country missing"
-                                                                                )
                                                                             }
-                                                                        } else {
-                                                                            throw java.lang.RuntimeException(
-                                                                                "delivery region missing"
-                                                                            )
                                                                         }
-                                                                    } else {
-                                                                        throw java.lang.RuntimeException(
-                                                                            "delivery city missing"
-                                                                        )
                                                                     }
-                                                                } else {
-                                                                    throw java.lang.RuntimeException(
-                                                                        "delivery postalCode missing"
-                                                                    )
                                                                 }
-                                                            } else {
-                                                                throw java.lang.RuntimeException(
-                                                                    "delivery customerMobile missing"
-                                                                )
                                                             }
-                                                        } else {
-                                                            throw java.lang.RuntimeException("delivery customerName missing")
                                                         }
                                                     }
                                                 }
